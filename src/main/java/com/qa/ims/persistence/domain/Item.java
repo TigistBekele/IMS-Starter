@@ -41,11 +41,12 @@ public class Item {
 		this.value = value;
 	}
 
+
 	@Override
 	public String toString() {
-		return " item_id: " + item_id + ", item_name: " + item_name + ", value: " + value;
+		return "Item [item_id: " + item_id + ", item_name: " + item_name + ", value: " + value + "]";
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -57,6 +58,8 @@ public class Item {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+
+	
 
 	@Override
 	public boolean equals(Object obj) {
