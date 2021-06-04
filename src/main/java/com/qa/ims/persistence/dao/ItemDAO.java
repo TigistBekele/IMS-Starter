@@ -26,6 +26,7 @@ public class ItemDAO implements Dao<Item> {
 		return new Item(item_id, item_name, value);
 	}
 
+	
 	@Override
 	public List<Item> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();

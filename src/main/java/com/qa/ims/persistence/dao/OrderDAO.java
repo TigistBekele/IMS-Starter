@@ -25,6 +25,7 @@ public class OrderDAO implements Dao<Order> {
 		return new Order(order_id, customer_id);
 	}
 
+	
 	@Override
 	public List<Order> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -34,7 +35,7 @@ public class OrderDAO implements Dao<Order> {
 			while (resultSet.next()) {
 				orders.add(modelFromResultSet(resultSet));
 			}
-		
+	
 			
 			return orders;
 		} catch (SQLException e) {

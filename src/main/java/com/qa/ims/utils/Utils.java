@@ -35,7 +35,7 @@ public class Utils {
 	}
 
 	
-	
+
 	public String getString() {
 		return scanner.nextLine();
 	}

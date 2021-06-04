@@ -24,6 +24,7 @@ public class ItemController implements CrudController<Item> {
 		this.utils = utils;
 	}
 
+	
 	@Override
 	public List<Item> readAll() {
 		List<Item> items = itemDAO.readAll();

@@ -28,6 +28,7 @@ public class OrderItemDAO implements Dao<OrderItem> {
 		return new OrderItem(ordersItems_id, order_id, item_id, quantity, totalCost);
 	}
 
+	
 	@Override
 	public List<OrderItem> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();

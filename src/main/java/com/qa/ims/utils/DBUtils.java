@@ -36,7 +36,7 @@ public class DBUtils {
 	}
 
 	
-	
+
 	public DBUtils() {
 		this("db.properties");
 	}
