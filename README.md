@@ -52,45 +52,44 @@ The code has three parts: -POJO -business layer -data layer The entire code can 
 ## UML diagram
 ![alt tag](https://github.com/TigistBekele/IMS-Starter/blob/master/src/main/resources/IMS%20UML%20Class%20Diagram.png)
 
-
 ## ERD 
 ![alt tag](https://github.com/TigistBekele/IMS-Starter/blob/master/src/main/resources/ERD.png)
-###Interfaces
+### Interfaces
 
 The code runs from the console and takes input from the console.
 
 Welcome to the Inventory Management System!
 Which entity would you like to use?
-CUSTOMER: Information about customers
-ITEM: Individual Items
-ORDER: Purchases of items
-ORDERITEM: Order of Items
-STOP: To close the application
+* CUSTOMER: Information about customers
+* ITEM: Individual Items
+* ORDER: Purchases of items
+* ORDERITEM: Order of Items
+* STOP: To close the application
 
 we can select one from those and we run the code then next we select one from crud
 
 What would you like to do with item:
-CREATE: To save a new entity into the database
-READ: To read an entity from the database
-UPDATE: To change an entity already in the database
-DELETE: To remove an entity from the database
-RETURN: To return to domain selection
+* CREATE: To save a new entity into the database
+* READ: To read an entity from the database
+* UPDATE: To change an entity already in the database
+* DELETE: To remove an entity from the database
+* RETURN: To return to domain selection
 
 
 ### Unit Tests 
 
 Unit testing reduces defects in the newly developed features or reduces bugs when changing the existing functionality. Unit testing verifies the accuracy of the each unit. Afterward, the units are integrated into an application by testing parts of the application via unit testing.
-*Makes the Process Agile
-*Quality of Code
-*Finds Software Bugs Early
-*Facilitates Changes and Simplifies Integration
-*Provides Documentation
-*Debugging Process
-*Design
-*Reduce Costs
+	* Makes the Process Agile
+	* Quality of Code
+	* Finds Software Bugs Early
+	* Facilitates Changes and Simplifies Integration
+	* Provides Documentation
+	* Debugging Process
+	* Design
+	* Reduce Costs
 
 To test the OrderItem class we use like this
-	@Test
+	* @Test
 	public void testCreate() {
 		final OrderItem other = new OrderItem(2L,2L, 3L, 2L,40.18);
 		assertEquals(other, DAO.create(other));

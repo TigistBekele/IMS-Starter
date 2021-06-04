@@ -29,22 +29,19 @@ public class OrderItemControllerTest {
 	@InjectMocks
 	private OrderItemController controller;
 
-	
-	
-	
 	@Test
 	public void testCreate() {
-//		final Long ordersItems_id = 1L;
-		
-		final Long order_id = 1L,item_id = 4L,quantity = 2L;
+		final Long ordersItems_id = 1L;
+
+		final Long order_id = 1L, item_id = 4L, quantity = 2L;
 
 		final Double totalCost = 378.00;
-		final OrderItem created = new OrderItem(order_id, item_id, quantity,totalCost);
+		final OrderItem created = new OrderItem(order_id, item_id, quantity, totalCost);
 
-//		Mockito.when(utils.getLong()).thenReturn(ordersItems_id);
-		Mockito.when(utils.getLong()).thenReturn(order_id,item_id,quantity);
-//		Mockito.when(utils.getLong()).thenReturn(item_id);
-//		Mockito.when(utils.getLong()).thenReturn(quantity);
+		Mockito.when(utils.getLong()).thenReturn(ordersItems_id);
+		Mockito.when(utils.getLong()).thenReturn(order_id, item_id, quantity);
+		Mockito.when(utils.getLong()).thenReturn(item_id);
+		Mockito.when(utils.getLong()).thenReturn(quantity);
 		Mockito.when(utils.getDouble()).thenReturn(totalCost);
 		Mockito.when(dao.create(created)).thenReturn(created);
 
@@ -54,8 +51,7 @@ public class OrderItemControllerTest {
 		Mockito.verify(utils, Mockito.times(1)).getDouble();
 		Mockito.verify(dao, Mockito.times(1)).create(created);
 	}
-	
-	
+
 	@Test
 	public void testReadAll() {
 		List<OrderItem> orderItems = new ArrayList<>();
@@ -67,27 +63,24 @@ public class OrderItemControllerTest {
 
 		Mockito.verify(dao, Mockito.times(1)).readAll();
 	}
-	
-	
-	
+
 	@Test
 	public void testUpdate() {
-		OrderItem updated = new OrderItem(1L,3L,2L,1L,86.09);
+		OrderItem updated = new OrderItem(1L, 3L, 2L, 1L, 86.09);
 
-	
-		
 //		Mockito.when(this.utils.getLong()).thenReturn(1L);
-		Mockito.when(this.utils.getLong()).thenReturn(updated.getOrdersItems_id(),updated.getOrder_id(), updated.getItem_id(),updated.getQuantity());
+		Mockito.when(this.utils.getLong()).thenReturn(updated.getOrdersItems_id(), updated.getOrder_id(),
+				updated.getItem_id(), updated.getQuantity());
 		Mockito.when(this.utils.getDouble()).thenReturn(updated.getTotalCost());
 		Mockito.when(this.dao.update(updated)).thenReturn(updated);
 
 		assertEquals(updated, this.controller.update());
-
+	
 		Mockito.verify(this.utils, Mockito.times(4)).getLong();
 		Mockito.verify(this.utils, Mockito.times(1)).getDouble();
 		Mockito.verify(this.dao, Mockito.times(1)).update(updated);
 	}
-	
+
 	@Test
 	public void testDelete() {
 		final long ID = 1L;
