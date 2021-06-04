@@ -17,6 +17,8 @@ public class Customer {
 		this.setSurname(surname);
 	}
 
+	
+	
 	public Long getId() {
 		return id;
 	}

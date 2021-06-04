@@ -26,6 +26,8 @@ public class CustomerDAO implements Dao<Customer> {
 		return new Customer(id, firstName, surname);
 	}
 
+
+	
 	/**
 	 * Reads all customers from the database
 	 * 

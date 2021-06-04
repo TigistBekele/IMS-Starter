@@ -23,8 +23,11 @@ public class CustomerControllerTest {
 	@Mock
 	private Utils utils;
 
+	
 	@Mock
+	
 	private CustomerDAO dao;
+	
 
 	@InjectMocks
 	private CustomerController controller;
@@ -42,8 +45,11 @@ public class CustomerControllerTest {
 		Mockito.verify(utils, Mockito.times(2)).getString();
 		Mockito.verify(dao, Mockito.times(1)).create(created);
 	}
+	
 
+	
 	@Test
+	
 	public void testReadAll() {
 		List<Customer> customers = new ArrayList<>();
 		customers.add(new Customer(1L, "jordan", "harrison"));
@@ -55,6 +61,7 @@ public class CustomerControllerTest {
 		Mockito.verify(dao, Mockito.times(1)).readAll();
 	}
 
+	
 	@Test
 	public void testUpdate() {
 		Customer updated = new Customer(1L, "chris", "perrins");

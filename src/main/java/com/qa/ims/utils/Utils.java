@@ -34,6 +34,8 @@ public class Utils {
 		return longInput;
 	}
 
+	
+	
 	public String getString() {
 		return scanner.nextLine();
 	}

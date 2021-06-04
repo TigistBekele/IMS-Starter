@@ -20,10 +20,11 @@ public class CustomerDAOTest {
 		DBUtils.connect();
 		DBUtils.getInstance().init("src/test/resources/sql-schema.sql", "src/test/resources/sql-data.sql");
 	}
-
+	
+	
 	@Test
 	public void testCreate() {
-		final Customer created = new Customer(2L, "chris", "perrins");
+		final Customer created = new Customer(2L, "Chris", "Perrins");
 		assertEquals(created, DAO.create(created));
 	}
 
@@ -34,6 +35,7 @@ public class CustomerDAOTest {
 		assertEquals(expected, DAO.readAll());
 	}
 
+	
 	@Test
 	public void testReadLatest() {
 		assertEquals(new Customer(1L, "jordan", "harrison"), DAO.readLatest());
